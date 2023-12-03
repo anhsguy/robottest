@@ -45,11 +45,37 @@ Steps to run the pytest codes with image 'myjenkins-blueocean:2.414.3-1' in dock
    --volume jenkins-docker-certs:/certs/client:ro \
    myjenkins-blueocean:2.414.3-1
 2. (Jenkins Dashboard) Browse to http://localhost:8080 or http://localhost:8080/blue/organizations/jenkins/pipelines     jyang 3333
-3. Add Jenkinsfile in github (anhsguy/startpytest)
-4. Build 'Pytest_test' > Declarative: Checkout SCM > Checkout > Set up Python Virtual Environment > Install Python Packages > Run Tests > Declarative : Post Actions
-  It takes about 2min to build
 
-The following is using 'pip install -r requirements.txt' to install python packages in Jenkinfiles
 
-4. Build 'Pytest_test' > Declarative: Checkout SCM > Checkout > Set up Python Virtual Environment >  > Run Tests > Declarative : Post Actions
-It takes about 10s to build (much faster)
+3. Add Jenkinsfile in github (anhsguy/robottest)
+4. Configure > Pipeline script from SCM > Git > URL: https://github.com/anhsguy/robottest.git > Branch: main > Save
+5. Build Now > Declarative: Checkout SCM > Checkout > Set up Python Virtual Environment > Run Tests > Declarative : Post Actions
+  It takes about 13s to build
+
++ robot -T FirstTestCase.robot
+values assigned 1 and 2
+==============================================================================
+FirstTestCase                                                                 
+==============================================================================
+TC1 :: My first test case in ride                                     | PASS |
+------------------------------------------------------------------------------
+Launch py File                                                        hello world
+| PASS |
+------------------------------------------------------------------------------
+Calling function from python                                          | PASS |
+------------------------------------------------------------------------------
+Class: sum from python                                                values assigned 1 and 2
+| PASS |
+------------------------------------------------------------------------------
+Class: diff from python                                               | PASS |
+------------------------------------------------------------------------------
+Compare Strings                                                       | PASS |
+------------------------------------------------------------------------------
+String_match                                                          | PASS |
+------------------------------------------------------------------------------
+FirstTestCase                                                         | PASS |
+7 tests, 7 passed, 0 failed
+==============================================================================
+Output:  /var/jenkins_home/workspace/robot_test/output-20231203-205301.xml
+Log:     /var/jenkins_home/workspace/robot_test/log-20231203-205301.html
+Report:  /var/jenkins_home/workspace/robot_test/report-20231203-205301.html
