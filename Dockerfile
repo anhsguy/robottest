@@ -28,7 +28,6 @@ COPY success.html .
 COPY test_string.py .
 COPY Textbox.robot .
 COPY variables.robot .
-COPY .upm .
 COPY poetry.lock .
 COPY pyproject.toml .
 COPY requirements.txt .
