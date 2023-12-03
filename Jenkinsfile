@@ -21,7 +21,7 @@ pipeline {
                 script {
                     // Set up a Python virtual environment and install dependencies
                     sh "python3 -m venv ${VIRTUAL_ENV}"
-                    sh "source ${VIRTUAL_ENV}/bin/activate && pip install -r requirements.txt"
+                    sh "bash -c 'source ${VIRTUAL_ENV}/bin/activate && pip install -r requirements.txt'"
                 }
             }
         }
