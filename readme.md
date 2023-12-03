@@ -9,10 +9,10 @@ goto github > repository startpytest > code >
 
 behave using docker container steps:
 john_mac@MikeMac welcome-to-docker %
-1. PC local: git clone https://github.com/anhsguy/startpytest.git
-2. cd startpytest
-3. docker build -t startpytest_image .
-4. docker run startpytest_image --1.1GB
+1. PC local: git clone https://github.com/anhsguy/robottest.git
+2. cd robottest
+3. docker build -t robottest_image .
+4. docker run robottest_image --1.1GB
 
 View detail on container or PC terminal: 
 
@@ -62,16 +62,16 @@ test_string.py:8
 
 Steps to push local to hub:
 
-1. PC local: docker images > startpytest_image  
+1. PC local: docker images > robottest_image  
    tag:latest
 
-2. docker login > rename: docker tag startpytest_image anhsguy792/startpytest_image
+2. docker login > rename: docker tag robottest_image anhsguy792/robottest_image
 
-3. To hub: docker push anhsguy792/startpytest_image:latest
+3. To hub: docker push anhsguy792/robottest_image:latest
 
-4. run: docker run anhsguy792/startpytest_image
+4. run: docker run anhsguy792/robottest_image
 
-remove any image: docker rmi startpytest_image or anhsguy792/startpytest_image
+remove any image: docker rmi robottest_image or anhsguy792/robottest_image
 
 Whenever step 4, the image in the hub will be loaded to Local and showing in PC terminal (docker images) even you delete it earlier
 
